@@ -14,8 +14,6 @@ let loading = document.getElementById("loading");
 fetch("https://api.github.com/users/niyoj")
 .then(response => response.json())
 .then(function (data) {
-    console.log(data);
-
     avatar.src = data.avatar_url;
     username.innerHTML = data.name;
     userlink.href = data.html_url;
