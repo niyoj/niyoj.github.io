@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+
+<noscript>Sorry, this website cannot run without Javascript.</noscript>
+
+<div id="loading" class="loading">
+    <img src="./assets/img/loading.gif" alt="Loading...">
+</div>
+
+<div id="site" class="site">
+    <header class="site-header">
+            <div class="avatar-wrapper">
+                <img id="avatar" src="" alt="User Avatar">
+            </div>
+            <h1>Hello, Everyone. I am <span id="username"></span></h1> 
+    </header>
+
+    <section class="site-content">
+        <q>you can check out my GitHub profile, from this <a id="userlink" href="">link</a>.</q>
+
+        <div class="card-wrapper">
+            <div class="card-follower card">
+                <a id="followers">
+                    <h3>followers</h3>
+                    <h2 id="followers_val" class="card-value"></h2> 
+                </a>
+            </div>
+
+            <div class="card-following card">
+                <a href="" id="following">
+                    <h3>following</h3>
+                    <h2 id="following_val" class="card-value"></h2> 
+                </a>
+            </div>
+
+            <div class="card-repo card">
+                <a href="" id="repo">
+                    <h3>my repo</h3>
+                    <h2 id="repos_val" class="card-value"></h2> 
+                </a>
+            </div>
+        </div> 
+    </section>
+</div>
+
+<script type="text/javascript" src="./src/js/api.js"></script>
+</body>
+</html>
