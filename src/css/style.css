@@ -89,7 +89,7 @@ q::before, q::after {
 .avatar-wrapper > img {
     width: 250px;
     height: 250px;
-    transform: translateY(-10px);
+    border-radius: 50%;
 }
 
 .site-header h1 {
