@@ -2,7 +2,15 @@
   --base-size: 16px;
   --scale-factor: 1.25;
 
-  --primary-color: ;
-  --secondary-color: ;
-  --bg-color: ;
+  /* Atlassian color token begins here */
+  --color-50: #f5edff;
+  --color-75: #d4b4ff;
+  --color-100: #c394ff;
+  --color-200: #a966ff;
+  --color-300: #9747ff;
+  --color-400: #6a32b3;
+  --color-500: #5c2b9c;
+  /* Atlassian color token ends here */
+
+  --primary-color: var(--color-300);
 }

@@ -4,26 +4,39 @@
     var(--base-size) * var(--scale-factor) * var(--scale-factor) *
       var(--scale-factor) * var(--scale-factor)
   );
+  font-weight: 900;
 }
+
+h1,
 .text-h1 {
   font-size: calc(
     var(--base-size) * var(--scale-factor) * var(--scale-factor) *
       var(--scale-factor)
   );
+  font-weight: 700;
 }
+
+h2,
 .text-h2 {
   font-size: calc(var(--base-size) * var(--scale-factor) * var(--scale-factor));
+  font-weight: 700;
 }
 
+h3,
 .text-h3 {
   font-size: calc(var(--base-size) * var(--scale-factor));
+  font-weight: 700;
 }
 
+p,
 .text-p {
   font-size: calc(var(--base-size));
+  font-weight: 400;
 }
 
+small,
 .text-sm {
   font-size: calc(var(--base-size) / var(--scale-factor));
+  font-weight: 400;
 }
 /*Typography utillity classes ends here*/
