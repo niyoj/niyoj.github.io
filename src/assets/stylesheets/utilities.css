@@ -1,0 +1,29 @@
+/*Typography utility classes begin here*/
+.text-title {
+  font-size: calc(
+    var(--base-size) * var(--scale-factor) * var(--scale-factor) *
+      var(--scale-factor) * var(--scale-factor)
+  );
+}
+.text-h1 {
+  font-size: calc(
+    var(--base-size) * var(--scale-factor) * var(--scale-factor) *
+      var(--scale-factor)
+  );
+}
+.text-h2 {
+  font-size: calc(var(--base-size) * var(--scale-factor) * var(--scale-factor));
+}
+
+.text-h3 {
+  font-size: calc(var(--base-size) * var(--scale-factor));
+}
+
+.text-p {
+  font-size: calc(var(--base-size));
+}
+
+.text-sm {
+  font-size: calc(var(--base-size) / var(--scale-factor));
+}
+/*Typography utillity classes ends here*/
