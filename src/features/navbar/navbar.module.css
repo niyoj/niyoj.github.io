@@ -1,5 +1,7 @@
 .navbar {
   position: absolute;
+  z-index: 20; /*wrt to navigation page*/
+
   top: 0;
   left: 0;
   width: 100vw;
@@ -10,3 +12,4 @@
   align-items: center;
   justify-content: space-between;
 }
+

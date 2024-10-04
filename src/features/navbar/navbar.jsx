@@ -1,4 +1,6 @@
 import { Logo } from "@ui";
+import { NavigationPage } from "@pages";
+
 import HamBurger from "./navbar-hamburger/navbar-hamburger";
 
 import styles from "./navbar.module.css";
@@ -11,13 +13,21 @@ export function Navbar() {
     setNavActive((prev) => !prev);
   };
 
-  return (
-    <nav className={styles["navbar"]}>
-      <Logo />
+  const logoProps = navActive
+    ? { type: "icon", inverse: true }
+    : { type: "default", inverse: false };
 
-      <button onClick={handleHamburgerClicked}>
-        <HamBurger active={navActive} />
-      </button>
-    </nav>
+  return (
+    <>
+      <nav className={styles["navbar"]}>
+        <Logo {...logoProps} />
+
+        <button onClick={handleHamburgerClicked}>
+          <HamBurger active={navActive} />
+        </button>
+      </nav>
+
+      {navActive && <NavigationPage />}
+    </>
   );
 }
