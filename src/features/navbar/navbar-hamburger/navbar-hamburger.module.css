@@ -29,6 +29,12 @@
   bottom: 0;
 }
 
+/* hamburger hover animation */
+.hamburger:hover .hamburger__bar:nth-child(2) {
+  transform: translateX(10px);
+  transition: transform 0.25s ease-out;
+}
+
 /*animating when the hamburger is active; disappear second bar then form a cross with bar 1 and bar 3*/
 .hamburger--active {
 }
