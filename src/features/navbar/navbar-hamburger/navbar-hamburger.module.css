@@ -1,0 +1,68 @@
+.hamburger {
+  width: 40px;
+  height: 25px;
+  position: relative;
+  overflow: visible;
+
+  cursor: pointer;
+}
+
+.hamburger__bar {
+  width: 40px;
+  height: 3px;
+  background-color: #000000;
+
+  position: absolute;
+  left: 0;
+}
+
+.hamburger__bar:nth-child(1) {
+  top: 0;
+}
+
+.hamburger__bar:nth-child(2) {
+  width: 30px;
+  top: 11px;
+}
+
+.hamburger__bar:nth-child(3) {
+  bottom: 0;
+}
+
+/*animating when the hamburger is active; disappear second bar then form a cross with bar 1 and bar 3*/
+.hamburger--active {
+}
+
+.hamburger--active .hamburger__bar:nth-child(2) {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.hamburger--active .hamburger__bar:nth-child(1) {
+  animation: topRotate 0.75s ease-in-out 1;
+  animation-fill-mode: forwards;
+}
+
+.hamburger--active .hamburger__bar:nth-child(3) {
+  animation: bottomRotate 0.75s ease-in-out 1;
+  animation-fill-mode: forwards;
+}
+
+/* creating animation for the bars; go in middle then form a cross */
+@keyframes topRotate {
+  30%, 70% {
+    transform: translateY(11px);
+  }
+  100% {
+    transform: translateY(11px) rotate(45deg);
+  }
+}
+
+@keyframes bottomRotate {
+  30%, 70% {
+    transform: translateY(-11px);
+  }
+  100% {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+}

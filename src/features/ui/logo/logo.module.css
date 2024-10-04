@@ -63,26 +63,26 @@
   animation: slideFromRight 0.25s ease-out 0.75s 1;
   animation-fill-mode: forwards;
 }
-/*animating during the reverse mode ends here*/
+/*animating during the forward mode ends here*/
 
-.logo--default .char--1,
-.logo--default .char--2,
-.logo--default .char--3,
-.logo--default .char--4,
-.logo--default .char--5,
-.logo--default .char--6,
-.logo--default .char--7,
-.logo--default .char--8 {
-  animation:
-    scaleDownAndOut 0.75s ease-in 1 reverse,
-    disappear 0s linear 0.75s 1 reverse;
-  animation-fill-mode: forwards;
-}
-
-.logo--default .char--9 {
-  animation: slideFromRight 0.25s ease-out 0.75s 1 reverse;
-  animation-fill-mode: both;
-}
+/* .logo--default .char--1, */
+/* .logo--default .char--2, */
+/* .logo--default .char--3, */
+/* .logo--default .char--4, */
+/* .logo--default .char--5, */
+/* .logo--default .char--6, */
+/* .logo--default .char--7, */
+/* .logo--default .char--8 { */
+/*   animation: */
+/*     scaleDownAndOut 0.75s ease-in 1 reverse, */
+/*     disappear 0s linear 0.75s 1 reverse; */
+/*   animation-fill-mode: forwards; */
+/* } */
+/**/
+/* .logo--default .char--9 { */
+/*   animation: slideFromRight 0.25s ease-out 0.75s 1 reverse; */
+/*   animation-fill-mode: both; */
+/* } */
 
 /*defining keyframe animations*/
 @keyframes scaleDownAndOut {
