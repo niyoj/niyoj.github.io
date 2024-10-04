@@ -1,0 +1,109 @@
+.logo {
+}
+
+.logo--icon {
+}
+
+.logo--default {
+}
+
+.logo--inverse {
+}
+
+/*handling inverse color*/
+.logo--inverse .char--0,
+.logo--inverse .char--2,
+.logo--inverse .char--3,
+.logo--inverse .char--6,
+.logo--inverse .char--7,
+.logo--inverse .char--1 path:nth-child(2),
+.logo--inverse .char--4 path:nth-child(2),
+.logo--inverse .char--8 path:nth-child(2) {
+  fill: #ffffff;
+}
+
+.logo--inverse .char--9,
+.logo--inverse .char--5,
+.logo--inverse .char--1 path:nth-child(1),
+.logo--inverse .char--4 path:nth-child(1),
+.logo--inverse .char--8 path:nth-child(1) {
+  fill: #000000;
+}
+
+.char--0,
+.char--1,
+.char--2,
+.char--3,
+.char--4,
+.char--5,
+.char--6,
+.char--7,
+.char--8,
+.char--9 {
+  transform-origin: center bottom;
+  transform-box: content-box;
+}
+
+/*animating during the forward mode begins here*/
+.logo--icon .char--1,
+.logo--icon .char--2,
+.logo--icon .char--3,
+.logo--icon .char--4,
+.logo--icon .char--5,
+.logo--icon .char--6,
+.logo--icon .char--7,
+.logo--icon .char--8 {
+  animation:
+    scaleDownAndOut 0.75s ease-in 1,
+    disappear 0s linear 0.75s 1;
+  animation-fill-mode: forwards;
+}
+
+.logo--icon .char--9 {
+  animation: slideFromRight 0.25s ease-out 0.75s 1;
+  animation-fill-mode: forwards;
+}
+/*animating during the reverse mode ends here*/
+
+.logo--default .char--1,
+.logo--default .char--2,
+.logo--default .char--3,
+.logo--default .char--4,
+.logo--default .char--5,
+.logo--default .char--6,
+.logo--default .char--7,
+.logo--default .char--8 {
+  animation:
+    scaleDownAndOut 0.75s ease-in 1 reverse,
+    disappear 0s linear 0.75s 1 reverse;
+  animation-fill-mode: forwards;
+}
+
+.logo--default .char--9 {
+  animation: slideFromRight 0.25s ease-out 0.75s 1 reverse;
+  animation-fill-mode: both;
+}
+
+/*defining keyframe animations*/
+@keyframes scaleDownAndOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes disappear {
+  to {
+    display: none;
+  }
+}
+
+@keyframes slideFromRight {
+  to {
+    transform: translateX(-100px);
+  }
+}
