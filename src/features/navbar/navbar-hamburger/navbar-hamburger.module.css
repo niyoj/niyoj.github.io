@@ -14,6 +14,8 @@
 
   position: absolute;
   left: 0;
+
+  transition: transform 0.5s ease-in-out;
 }
 
 .hamburger__bar:nth-child(1) {
@@ -32,43 +34,46 @@
 /* hamburger hover animation */
 .hamburger:hover .hamburger__bar:nth-child(2) {
   transform: translateX(10px);
-  transition: transform 0.25s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 /*animating when the hamburger is active; disappear second bar then form a cross with bar 1 and bar 3*/
-.hamburger--active {
+.hamburger--active .hamburger__bar{
+  transition: transform 0.5s ease-in-out;
 }
 
-.hamburger--active .hamburger__bar:nth-child(2) {
-  opacity: 0;
-  transform: scale(0.5);
+.hamburger.hamburger--active .hamburger__bar:nth-child(2) {
+  transform: translateX(1000px);
+  transition: transform 0.5s ease-in;
 }
 
 .hamburger--active .hamburger__bar:nth-child(1) {
-  animation: topRotate 0.75s ease-in-out 1;
-  animation-fill-mode: forwards;
+  transform: translateY(11px) rotate(45deg);
+  /* animation: topRotate 0.75s ease-in-out 1; */
+  /* animation-fill-mode: forwards; */
 }
 
 .hamburger--active .hamburger__bar:nth-child(3) {
-  animation: bottomRotate 0.75s ease-in-out 1;
-  animation-fill-mode: forwards;
+  transform: translateY(-11px) rotate(-45deg);
+  /* animation: bottomRotate 0.75s ease-in-out 1; */
+  /* animation-fill-mode: forwards; */
 }
 
 /* creating animation for the bars; go in middle then form a cross */
-@keyframes topRotate {
-  30%, 70% {
-    transform: translateY(11px);
-  }
-  100% {
-    transform: translateY(11px) rotate(45deg);
-  }
-}
-
-@keyframes bottomRotate {
-  30%, 70% {
-    transform: translateY(-11px);
-  }
-  100% {
-    transform: translateY(-11px) rotate(-45deg);
-  }
-}
+/* @keyframes topRotate { */
+/*   30%, 70% { */
+/*     transform: translateY(11px); */
+/*   } */
+/*   100% { */
+/*     transform: translateY(11px) rotate(45deg); */
+/*   } */
+/* } */
+/**/
+/* @keyframes bottomRotate { */
+/*   30%, 70% { */
+/*     transform: translateY(-11px); */
+/*   } */
+/*   100% { */
+/*     transform: translateY(-11px) rotate(-45deg); */
+/*   } */
+/* } */
