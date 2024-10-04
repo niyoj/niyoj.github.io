@@ -27,7 +27,7 @@ export function Navbar() {
         </button>
       </nav>
 
-      {navActive && <NavigationPage />}
+      <NavigationPage active={navActive}/>
     </>
   );
 }
