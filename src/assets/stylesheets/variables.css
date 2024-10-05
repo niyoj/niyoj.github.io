@@ -2,6 +2,17 @@
   --base-size: 16px;
   --scale-factor: 1.25;
 
+  /* typography variable begins here */
+  --font-h1: calc(
+    var(--base-size) * var(--scale-factor) * var(--scale-factor) *
+      var(--scale-factor)
+  );
+  --font-h2: calc(var(--base-size) * var(--scale-factor) * var(--scale-factor));
+  --font-h3: calc(var(--base-size) * var(--scale-factor));
+  --font-p: var(--base-size);
+  --font-small: calc(var(--base-size) / var(--scale-factor));
+  /* typography variable ends here */
+
   /* Atlassian color token begins here */
   --color-50: #f5edff;
   --color-75: #d4b4ff;
