@@ -1,0 +1,54 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu__title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.menu__bar {
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.menu__list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu__list__item__title {
+  font-weight: 700;
+}
+
+.menu__list__more {
+  display: inline-block;
+  flex-grow: 0;
+  margin-top: 32px;
+}
+
+.menu__list__more:hover span {
+  margin-right: 24px;
+  cursor: pointer;
+  transition: margin 0.25s ease-in;
+}
+
+.menu__list__more span {
+  margin-right: 8px;
+  transition: margin 0.25s ease-out;
+}
+
+.menu__list__item:hover {
+  outline: 1px solid white;
+  outline-offset: 8px;
+  cursor: pointer;
+}

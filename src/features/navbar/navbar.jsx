@@ -9,13 +9,15 @@ import { useDelay } from "@ui";
 
 export function Navbar() {
   const [navActive, setNavActive] = useState(false);
-  const delayedActive = useDelay(navActive, 1);
+
+  const delayLogo = useDelay(navActive, navActive ? 0.6 : 0.3);
+  const delayedActive = useDelay(navActive, 0.9);
 
   const handleHamburgerClicked = () => {
     setNavActive((prev) => !prev);
   };
 
-  const logoProps = delayedActive
+  const logoProps = delayLogo
     ? { type: "icon", inverse: true }
     : { type: "default", inverse: false };
 

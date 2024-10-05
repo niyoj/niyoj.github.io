@@ -1,0 +1,47 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu__title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.menu__bar {
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.menu__list__item {
+  display: block;
+  text-transform: uppercase;
+}
+
+.menu__list__item h1 {
+  position: relative;
+}
+
+.menu__list__item h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  /* color: var(--color-75); */
+  color: black;
+  transition: width 0.3s ease-out;
+}
+
+.menu__list__item:hover h1::after {
+  width: 100%;
+  transition: width 0.3s ease-in;
+}
