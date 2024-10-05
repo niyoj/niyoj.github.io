@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./logo.module.css";
 
 // type = default or icon
@@ -80,3 +81,8 @@ export function Logo({ type = "default", inverse = false }) {
     </svg>
   );
 }
+
+Logo.propTypes = {
+  type: PropTypes.oneOf(["default", "icon"]),
+  inverse: PropTypes.bool,
+};

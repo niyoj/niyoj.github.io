@@ -1,6 +1,7 @@
 import styles from "./activities.module.css";
 
 import Arrow from "../assets/arrow.svg";
+import PropTypes from "prop-types";
 
 export function Activities({ items, active = false }) {
   return (
@@ -33,3 +34,13 @@ export function Activities({ items, active = false }) {
     </div>
   );
 }
+
+Activities.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  active: PropTypes.bool,
+};

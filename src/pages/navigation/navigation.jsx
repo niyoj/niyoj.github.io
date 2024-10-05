@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./navigation.module.css";
 import styles2 from "./navigation-bg/navigation-bg.module.css";
 
@@ -22,3 +24,7 @@ export function NavigationPage({ active = true }) {
     </section>
   );
 }
+
+NavigationPage.propTypes = {
+  active: PropTypes.bool,
+};

@@ -6,6 +6,7 @@ import Linkedin from "@assets/images/icons/linkedin.svg?react";
 import Twitter from "@assets/images/icons/twitter.svg?react";
 
 import styles from "./navigation-content.module.css";
+import PropTypes from "prop-types";
 
 const menu1 = ["home", "about", "porfolio"];
 const menu2 = ["blogs", "contact"];
@@ -69,3 +70,7 @@ export function NavigationContent({ active = false }) {
     </main>
   );
 }
+
+NavigationContent.propTypes = {
+  active: PropTypes.bool,
+};

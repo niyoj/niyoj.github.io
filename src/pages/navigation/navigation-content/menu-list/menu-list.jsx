@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./menu-list.module.css";
 
 export function MenuList({ title, items, active = false }) {
@@ -23,3 +24,9 @@ export function MenuList({ title, items, active = false }) {
     </div>
   );
 }
+
+MenuList.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  active: PropTypes.bool,
+};
