@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 export function Activities({ items, active = false }) {
   return (
     <div className={styles["menu"]}>
-      <small className={styles["menu__title"]}>{"activities"}</small>
+      <small className={styles["menu__title"]}>{"latest activities"}</small>
 
       <div className={styles["menu__bar"]} />
 
