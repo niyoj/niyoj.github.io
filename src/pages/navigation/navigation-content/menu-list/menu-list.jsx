@@ -1,8 +1,10 @@
 import styles from "./menu-list.module.css";
 
-export function MenuList({ title, items }) {
+export function MenuList({ title, items, active = false }) {
   return (
-    <div className={styles["menu"]}>
+    <div
+      className={`${styles["menu"]} ${active ? styles["menu--active"] : styles["menu--inactive"]}`}
+    >
       <small className={styles["menu__title"]}>{title ?? ""}</small>
 
       <div className={styles["menu__bar"]} />

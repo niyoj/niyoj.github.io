@@ -33,13 +33,19 @@ const activities = [
   },
 ];
 
-export function NavigationContent() {
+const links = {
+  linkedin: "https://linkedin.com/niyoj",
+  github: "https://github.com/niyoj",
+  twitter: "https://twitter.com/oliniyoj",
+};
+
+export function NavigationContent({ active = false }) {
   return (
     <main className={styles["navpage__main"]}>
       <div className={styles["navpage__main__top"]}>
-        <MenuList title="menu" items={menu1} />
-        <MenuList title="menu" items={menu2} />
-        <Activities items={activities} />
+        <MenuList title="menu" items={menu1} active={active} />
+        <MenuList title="menu" items={menu2} active={active} />
+        <Activities items={activities} active={active} />
       </div>
 
       <div style={{ height: "1px", backgroundColor: "#ffffff", width: "100%" }}>
@@ -49,9 +55,15 @@ export function NavigationContent() {
       <div className={styles["navpage__main__bottom"]}>
         <small> Designed and Developed by Niyoj</small>
         <div className={styles["navpage__icons"]}>
-          <Linkedin className={styles["social_icons"]} />
-          <Twitter className={styles["social_icons"]} />
-          <GitHub className={styles["social_icons"]} />
+          <a href={links.linkedin} target="_blank">
+            <Linkedin className={styles["social_icons"]} />
+          </a>
+          <a href={links.twitter} target="_blank">
+            <Twitter className={styles["social_icons"]} />
+          </a>
+          <a href={links.github} target="_blank">
+            <GitHub className={styles["social_icons"]} />
+          </a>
         </div>
       </div>
     </main>
