@@ -7,16 +7,12 @@ import Twitter from "@assets/images/icons/twitter.svg?react";
 
 import styles from "./navigation-content.module.css";
 import PropTypes from "prop-types";
+import { useLayoutEffect, useRef, useState } from "react";
 
-const menu1 = ["home", "about", "porfolio"];
-const menu2 = ["blogs", "contact"];
+const dummyMenu1 = ["home", "about", "porfolio"];
+const dummyMenu2 = ["blogs", "contact"];
 
-const activities = [
-  {
-    title: "Education Information Management System",
-    description:
-      "A project I made for IOE, Thapathali Campus that manages the current student records at the campus.",
-  },
+const dummyActivities = [
   {
     title: "Education Information Management System",
     description:
@@ -41,12 +37,52 @@ const links = {
 };
 
 export function NavigationContent({ active = false }) {
+  const [activities, setActivities] = useState(dummyActivities);
+  const [menu1, setMenu1] = useState(dummyMenu1);
+  const [menu2, setMenu2] = useState(dummyMenu2);
+
+  const ref = useRef(null);
+
+  useLayoutEffect(() => {
+    const handleResize = (event) => {
+      const oneActivitySpace = ref.current.children[2].children[0].clientHeight;
+
+      const spaceAvaiable = event.target.innerHeight - 250 - 250;
+      const numbers = Math.floor(spaceAvaiable / oneActivitySpace);
+      setActivities(dummyActivities.slice(0, numbers));
+
+      // collapse menu on smaller screen on resize
+      if (event.target.innerWidth < 500) {
+        setMenu1([...dummyMenu1, ...dummyMenu2]);
+        setMenu2([]);
+      } else {
+        setMenu1(dummyMenu1);
+        setMenu2(dummyMenu2);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  if (window.innerWidth < 500 && menu2.length !== 0) {
+    setMenu1([...menu1, ...menu2]);
+    setMenu2([]);
+  }
+
   return (
     <main className={styles["navpage__main"]}>
       <div className={styles["navpage__main__top"]}>
-        <MenuList title="menu" items={menu1} active={active} />
-        <MenuList title="menu" items={menu2} active={active} />
-        <Activities items={activities} active={active} />
+        {menu1.length && (
+          <MenuList title="menu" items={menu1} active={active} />
+        )}
+        {Boolean(menu2.length) && (
+          <MenuList title="menu" items={menu2} active={active} />
+        )}
+        <Activities items={activities} active={active} ref={ref} />
       </div>
 
       <div style={{ height: "1px", backgroundColor: "#ffffff", width: "100%" }}>

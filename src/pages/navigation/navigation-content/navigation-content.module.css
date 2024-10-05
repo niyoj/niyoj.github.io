@@ -7,6 +7,9 @@
   height: 100vh;
   z-index: 150;
 
+  max-height: 100vh;
+  overflow-y: hidden;
+
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -15,23 +18,36 @@
   color: #ffffff;
 }
 
+@media screen and (max-width: 750px) {
+  .navpage__main {
+    padding: 100px 50px;
+  }
+}
+
 .navpage__main__top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 3rem; /* to ensure that atleast there is always 3 rem gap*/
 }
 
 .navpage__main__bottom {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .social_icons {
   height: var(--font-h3);
-  margin-left: -.6rem;
+  margin-left: -0.6rem;
 }
 
-.social_icons path{
+.social_icons path {
   fill: #ffffff;
 }
+
+
+/* media query for responsivness begins here */
+/* @media screen and () */
+/* media query for responsivness end here */
