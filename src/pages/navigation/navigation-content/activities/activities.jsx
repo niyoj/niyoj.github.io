@@ -2,10 +2,11 @@ import styles from "./activities.module.css";
 
 import Arrow from "../assets/arrow.svg";
 import PropTypes from "prop-types";
+import { forwardRef } from "react";
 
-export function Activities({ items, active = false }) {
+export const Activities = forwardRef(({ items, active = false }, ref) => {
   return (
-    <div className={styles["menu"]}>
+    <div className={styles["menu"]} ref={ref}>
       <small className={styles["menu__title"]}>{"latest activities"}</small>
 
       <div className={styles["menu__bar"]} />
@@ -33,7 +34,9 @@ export function Activities({ items, active = false }) {
       </div>
     </div>
   );
-}
+});
+
+Activities.displayName = "Activities";
 
 Activities.propTypes = {
   items: PropTypes.arrayOf(
