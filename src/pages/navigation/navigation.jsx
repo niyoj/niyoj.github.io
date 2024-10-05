@@ -1,26 +1,13 @@
-import { useEffect, useState } from "react";
-
 import styles from "./navigation.module.css";
 import styles2 from "./navigation-bg/navigation-bg.module.css";
 
 import { NavigationPageBG } from "./navigation-bg/navigation-bg-component";
+import { useDelay } from "@ui";
 
 const delay = 0.25; // in seconds
 
 export function NavigationPage({ active = true }) {
-  const [showBG, setShowBG] = useState(false);
-
-  useEffect(() => {
-    if (active) {
-      setShowBG(true);
-      return;
-    }
-
-    // if the state becomes inactive then wait for some seconds for the animation
-    const timeout = setTimeout(() => setShowBG(false), delay * 1000 * 4);
-
-    return () => clearTimeout(timeout);
-  }, [active]);
+  const showBG = useDelay(active, delay*4);
 
   return (
     <section
