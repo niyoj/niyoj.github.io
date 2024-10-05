@@ -5,15 +5,17 @@ import HamBurger from "./navbar-hamburger/navbar-hamburger";
 
 import styles from "./navbar.module.css";
 import { useState } from "react";
+import { useDelay } from "@ui";
 
 export function Navbar() {
   const [navActive, setNavActive] = useState(false);
+  const delayedActive = useDelay(navActive, 1);
 
   const handleHamburgerClicked = () => {
     setNavActive((prev) => !prev);
   };
 
-  const logoProps = navActive
+  const logoProps = delayedActive
     ? { type: "icon", inverse: true }
     : { type: "default", inverse: false };
 
@@ -23,11 +25,11 @@ export function Navbar() {
         <Logo {...logoProps} />
 
         <button onClick={handleHamburgerClicked}>
-          <HamBurger active={navActive} />
+          <HamBurger active={delayedActive} />
         </button>
       </nav>
 
-      <NavigationPage active={navActive}/>
+      <NavigationPage active={navActive} />
     </>
   );
 }

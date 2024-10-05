@@ -65,6 +65,24 @@
 }
 /*animating during the forward mode ends here*/
 
+/*animating during the forward mode begins here*/
+.logo--default .char--1,
+.logo--default .char--2,
+.logo--default .char--3,
+.logo--default .char--4,
+.logo--default .char--5,
+.logo--default .char--6,
+.logo--default .char--7,
+.logo--default .char--8 {
+  animation:
+    scaleUpAndIn 0.5s ease-in 1,
+    appear 0s linear 0.5s 1;
+}
+
+.logo--default .char--9 {
+  animation: slideToRight 0.125s ease-out 0.5s 1;
+}
+/*animating during the forward mode ends here*/
 /* .logo--default .char--1, */
 /* .logo--default .char--2, */
 /* .logo--default .char--3, */
@@ -105,5 +123,28 @@
 @keyframes slideFromRight {
   to {
     transform: translateX(-100px);
+  }
+}
+
+@keyframes scaleUpAndIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes appear {
+  to {
+    display: block;
+  }
+}
+
+@keyframes slideToRight {
+  to {
+    transform: translateX(0px);
   }
 }
