@@ -1,0 +1,40 @@
+.button {
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+
+  padding: 0.5rem 3rem;
+  border: 2px solid var(--primary-color);
+
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary-color);
+
+  transition: width 0.4s ease-out;
+  z-index: -1;
+}
+
+.button:hover {
+  color: #ffffff;
+}
+
+.button:hover::after {
+  width: 100%;
+  transition: width 0.4s ease-in;
+}
