@@ -11,6 +11,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  overflow: hidden;
 }
 
 @media screen and (max-width: 750px) {

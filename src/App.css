@@ -12,3 +12,14 @@ small {
   font-family: "Lora", serif;
   font-weight: 400;
 }
+
+body {
+}
+
+.scroll_hint {
+  position: absolute;
+  bottom: var(--font-small);
+
+  left: 50%;
+  transform: translate(-50%);
+}

@@ -16,7 +16,15 @@ export const HomePage = forwardRef((props, ref) => {
       <div className={styles["homepage__hero"]}>
         <div className={styles["homepage__hero__name"]}>
           <h3>Hello, myself</h3>
-          <h1 style={{ fontSize: "3.5rem" }}>Niyoj Oli.</h1>
+          <h1
+            style={{
+              fontSize: "3.5rem",
+              marginTop: "0.5rem",
+              color: "var(--primary-color)",
+            }}
+          >
+            Niyoj Oli.
+          </h1>
         </div>
 
         <div className={styles["homepage__hero__cta"]}>
