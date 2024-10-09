@@ -1,0 +1,31 @@
+.scroll_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.scroll {
+  width: 25px;
+  height: 50px;
+  padding: 3px;
+  border: 2px solid #000000;
+  border-radius: 12.5px;
+}
+
+.scroll__thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: #000000;
+  animation: scrollHintAnimate 1s ease-out infinite alternate;
+}
+
+@keyframes scrollHintAnimate {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 25px;
+  }
+}
