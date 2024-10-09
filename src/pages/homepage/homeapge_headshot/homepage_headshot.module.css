@@ -1,0 +1,16 @@
+.homepage__side__headshot_wrapper {
+  position: relative;
+}
+
+.homepage__side__headshot {
+  width: 35vw;
+}
+
+.homepage__side__headshotbg {
+  position: absolute;
+  width: 22vw;
+  height: auto;
+  bottom: 30px;
+  left: 3vw;
+  z-index: -1;
+}
