@@ -13,6 +13,9 @@ export function Navbar() {
   const delayLogo = useDelay(navActive, navActive ? 0.6 : 0.3);
   const delayedActive = useDelay(navActive, 0.9);
 
+  // temporary fix
+  const delayedNavActive = useDelay(navActive, navActive ? 0 : 1);
+
   const handleHamburgerClicked = () => {
     setNavActive((prev) => !prev);
   };
@@ -31,7 +34,7 @@ export function Navbar() {
         </button>
       </nav>
 
-      <NavigationPage active={navActive} />
+      {delayedNavActive && <NavigationPage active={navActive} />}
     </>
   );
 }

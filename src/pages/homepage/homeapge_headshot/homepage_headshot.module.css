@@ -1,3 +1,11 @@
+.homepage__side {
+  flex: 1;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .homepage__side__headshot_wrapper {
   position: relative;
 }
