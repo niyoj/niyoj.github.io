@@ -1,9 +1,11 @@
 .homepage__side {
   flex: 1;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
 }
 
 .homepage__side__headshot_wrapper {
@@ -21,4 +23,33 @@
   bottom: 30px;
   left: 3vw;
   z-index: -1;
+}
+
+.abstract {
+  position: absolute;
+  z-index: -1;
+}
+
+.abstract--dotscircle {
+  top: 0;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.abstract--plus {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+.abstract--zigzag_1 {
+  top: 0;
+  left: 0;
+  transform: rotate(25.87deg) translate(-50%, 50%);
+}
+
+.abstract--zigzag_2 {
+  bottom: 0;
+  right: 0;
+  transform: rotate(-30deg) translate(-50%);
 }

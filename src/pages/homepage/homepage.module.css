@@ -22,6 +22,7 @@
 }
 
 .homepage__hero__cta {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 3rem;
@@ -84,5 +85,16 @@
   align-items: space-between;
   position: relative;
   gap: 100px;
+}
+
+.abstracts {
+  position: absolute;
+  z-index: -1;
+}
+
+.abstracts--solidplus {
+  bottom: 0;
+  right: 0;
+  transform: translate(100%, 50%);
 }
 

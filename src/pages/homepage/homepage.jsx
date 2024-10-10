@@ -7,6 +7,8 @@ import Linkedin from "@assets/images/icons/linkedin.svg?react";
 import Twitter from "@assets/images/icons/twitter.svg?react";
 import Redirect from "@assets/images/icons/open-in-blank.svg?react";
 
+import SolidPlus from "@assets/images/abstracts/solid-plus.svg?react";
+
 import styles from "./homepage.module.css";
 import HomepageSide from "./homeapge_headshot/homepage_headshot";
 
@@ -49,6 +51,9 @@ export const HomePage = forwardRef((props, ref) => {
               Arrange a meet <Redirect style={{ height: 24 }} />{" "}
             </Button>
           </div>
+          <SolidPlus
+            className={`${styles["abstracts"]} ${styles["abstracts--solidplus"]}`}
+          />
         </div>
 
         <div className={styles["homepage__hero__content"]}>
