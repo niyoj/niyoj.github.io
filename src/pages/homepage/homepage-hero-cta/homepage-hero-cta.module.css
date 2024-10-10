@@ -28,6 +28,15 @@
   gap: 0.5rem;
 }
 
+@media screen and (max-width: 750px) {
+  .homepage__cta {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .homepage__cta:hover path {
   fill: #ffffff;
 }
@@ -60,14 +69,13 @@
   border-bottom: 0.4rem solid transparent;
 }
 
-
 .abstracts {
   position: absolute;
   z-index: -1;
 }
 
 .abstracts--solidplus {
-  bottom: 0;
+  bottom: -10px;
   right: 0;
   transform: translate(100%, 50%);
 }

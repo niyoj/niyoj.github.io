@@ -19,9 +19,15 @@ body {
 }
 
 .scroll_hint {
-  position: absolute;
+  position: fixed;
   bottom: var(--font-small);
 
   left: 50%;
   transform: translate(-50%);
+}
+
+@media screen and (max-width: 750px) {
+  .scroll_hint {
+    display: none;
+  }
 }

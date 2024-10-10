@@ -2,7 +2,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 4rem;
   padding-top: 40px;
 }
 
@@ -12,4 +12,10 @@
   align-items: space-between;
   position: relative;
   gap: 100px;
+}
+
+@media screen and (max-width: 750px) {
+  .homepage__hero__content {
+    gap: 1rem;
+  }
 }
