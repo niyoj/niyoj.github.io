@@ -1,0 +1,15 @@
+.homepage__hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-top: 40px;
+}
+
+.homepage__hero__content {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  position: relative;
+  gap: 100px;
+}

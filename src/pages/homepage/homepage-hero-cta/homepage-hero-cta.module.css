@@ -1,0 +1,73 @@
+.homepage__hero__cta {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.homepage__hero__cta--left {
+  position: relative;
+  width: 8rem;
+}
+
+.homepage__hero__cta--right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rotated {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: left bottom;
+  transform: rotate(-90deg) translateY(100%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.homepage__cta:hover path {
+  fill: #ffffff;
+}
+
+.social_links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social_links svg {
+  width: auto !important;
+  height: auto;
+}
+
+.arrow_line {
+  position: relative;
+  width: 50px;
+  height: 2px;
+  background-color: #000000;
+}
+
+.arrow_line::after {
+  content: " ";
+  position: absolute;
+  top: calc(-0.4rem + 1px);
+  right: -3px;
+  border-left: 0.8rem solid #000000;
+  border-top: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid transparent;
+}
+
+
+.abstracts {
+  position: absolute;
+  z-index: -1;
+}
+
+.abstracts--solidplus {
+  bottom: 0;
+  right: 0;
+  transform: translate(100%, 50%);
+}

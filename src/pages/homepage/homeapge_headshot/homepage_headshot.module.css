@@ -14,11 +14,13 @@
 
 .homepage__side__headshot {
   width: 35vw;
+  min-width: 320px;
 }
 
 .homepage__side__headshotbg {
   position: absolute;
   width: 22vw;
+  min-width: 205px;
   height: auto;
   bottom: 30px;
   left: 3vw;
