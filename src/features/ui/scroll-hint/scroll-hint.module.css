@@ -18,14 +18,18 @@
   height: 15px;
   border-radius: 7.5px;
   background-color: #000000;
-  animation: scrollHintAnimate 1s ease-out infinite alternate;
+  animation: scrollHintAnimate 8s ease-in-out infinite;
 }
 
 @keyframes scrollHintAnimate {
-  from {
+  0% {
     margin-top: 0;
   }
-  to {
+  10% {
     margin-top: 25px;
+  }
+  20%,
+  100% {
+    margin-top: 0;
   }
 }
