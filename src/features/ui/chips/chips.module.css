@@ -1,0 +1,35 @@
+.chips {
+  display: inline;
+  padding: 0.2rem 1rem;
+  /* padding: calc(var(--font-small) / 2) var(--font-small); */
+  border-radius: 0.5rem;
+
+  background-color: transparent;
+  border: 1.5px solid #958e99;
+  color: #958e99;
+}
+
+.chips label {
+  cursor: pointer;
+  display: inline-flex;
+  gap: calc(var(--font-small) / 2);
+  align-items: center;
+}
+
+.chips input {
+  display: none;
+}
+
+.chips small {
+  font-weight: 500;
+}
+
+.chips svg {
+  height: calc(var(--font-small) * 0.75);
+  fill: var(--color-75);
+}
+
+.chips--active {
+  border-color: var(--color-75);
+  color: var(--color-75);
+}
