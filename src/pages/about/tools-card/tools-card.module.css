@@ -1,0 +1,56 @@
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #000;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card__icon {
+  height: 4rem;
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--font-h3);
+}
+
+.card__info h3 {
+  color: var(--color-50);
+}
+
+.card > small {
+  color: #b9b9b9;
+}
+
+.card__info small {
+  color: var(--color-75);
+}
+
+.arrow {
+  fill: #b9b9b9;
+  height: calc(var(--font-small) * 0.75);
+  transition: all 0.25s ease-in;
+}
+
+.card > small:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.card > small:hover .arrow {
+  fill: white;
+  margin-left: calc(var(--font-small) * 0.5);
+  transition: all 0.25s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: transform 0.25s ease-out;
+  cursor: pointer;
+}
