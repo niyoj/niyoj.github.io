@@ -5,8 +5,11 @@
   background-color: #000;
   padding: 1rem;
   border-radius: 0.5rem;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.25s ease-in;
+  flex: 0 1 auto;
 }
 
 .card__icon {
@@ -14,14 +17,18 @@
 }
 
 .card__info {
+  min-width: 180px;
+  /* align-self: normal; */
+  white-space: nowrap; /*words doesn't break between spaces*/
   display: flex;
+  gap: 1.5rem; /*sets a minimum spacing between elements*/
   justify-content: space-between;
   align-items: flex-end;
-  gap: var(--font-h3);
 }
 
 .card__info h3 {
   color: var(--color-50);
+  text-transform: capitalize;
 }
 
 .card > small {

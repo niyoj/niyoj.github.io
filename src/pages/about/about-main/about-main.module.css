@@ -1,0 +1,76 @@
+.about__main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__main__select {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.about__main__select > small {
+  display: block;
+  margin-bottom: var(--font-small);
+  text-transform: uppercase;
+  font-weight: 500;
+  /* text-decoration: underline; */
+}
+
+.about__main__select__list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.about__main__display--container {
+  position: relative;
+}
+
+.about__main__display {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: none;
+  padding: 1rem;
+}
+
+.about__main__display::-webkit-scrollbar {
+  display: none;
+}
+
+.about__main__display.scrollable:hover .arrow_swipe {
+  display: block;
+}
+
+.arrow_swipe {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: 2px solid #c5c5c5c5;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+@keyframes goright {
+  from {
+    transform: translateX(0);
+  }
+  to {
+  transform: translateX(45%);
+  }
+}
+
+.arrow_swipe svg {
+  height: var(--font-h1);
+  fill: var(--color-100);
+  animation: goright 1s cubic-bezier(0.82, -0.07, 0.58, 1) 0.15s alternate;
+  animation-fill-mode: forwards;
+}
