@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Chips } from "@ui";
 import Arrow from "@assets/images/icons/arrow-right.svg?react";
 
@@ -7,10 +9,27 @@ import { TechStacks } from "../prop-types";
 import { ToolsCard } from "../tools-card/tools-card";
 
 export function AboutMain({ techStacks = [] }) {
+  const [filtered, setFiltered] = useState([]);
+
   const categories = techStacks
     .map((techStack) => techStack.category)
     .flat()
     .filter((item, index, arr) => arr.indexOf(item) === index);
+
+  const handleFilterChange = (name, checked) => {
+    if (checked) {
+      setFiltered((prev) => [name, ...prev]);
+    } else {
+      setFiltered((prev) => prev.filter((item) => item !== name));
+    }
+  };
+
+  const visibleTechStacks =
+    filtered.length === 0
+      ? techStacks
+      : techStacks.filter((item) =>
+        item.category.some((element) => filtered.includes(element)),
+      );
 
   return (
     <main className={styles["about__main"]}>
@@ -19,7 +38,9 @@ export function AboutMain({ techStacks = [] }) {
 
         <div className={styles["about__main__select__list"]}>
           {categories.map((item, index) => (
-            <Chips key={index}>{item}</Chips>
+            <Chips key={index} onChange={handleFilterChange.bind(null, item)}>
+              {item}
+            </Chips>
           ))}
         </div>
       </div>
@@ -27,7 +48,13 @@ export function AboutMain({ techStacks = [] }) {
         <div
           className={`${styles["about__main__display"]} ${styles["scrollable"]}`}
         >
-          {techStacks.map((techStack) => (
+          <div
+            className={`${styles["arrow_swipe"]} ${styles["arrow_swipe--left"]}`}
+          >
+            <Arrow />
+          </div>
+
+          {visibleTechStacks.map((techStack) => (
             <ToolsCard
               key={techStack.name}
               name={techStack.name}
@@ -36,7 +63,9 @@ export function AboutMain({ techStacks = [] }) {
             />
           ))}
 
-          <div className={styles["arrow_swipe"]}>
+          <div
+            className={`${styles["arrow_swipe"]} ${styles["arrow_swipe--right"]}`}
+          >
             <Arrow />
           </div>
         </div>

@@ -26,10 +26,12 @@
 
 .chips svg {
   height: calc(var(--font-small) * 0.75);
-  fill: var(--color-75);
+  /* fill: var(--color-75); */
+  fill: var(--color-300);
 }
 
 .chips--active {
-  border-color: var(--color-75);
-  color: var(--color-75);
+  border-color: var(--color-300);
+  /* color: var(--color-75); */
+  color: var(--color-300);
 }

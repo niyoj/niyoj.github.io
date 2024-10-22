@@ -10,6 +10,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.25s ease-in;
   flex: 0 1 auto;
+  border-color: var(--color-300);
 }
 
 .card__icon {
