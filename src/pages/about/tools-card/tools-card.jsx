@@ -1,7 +1,7 @@
 import ArrowRight from "@assets/images/icons/arrow-right.svg?react";
 
 import styles from "./tools-card.module.css";
-import { TechStacks } from "../prop-types";
+import { Tools } from "../prop-types";
 
 import { TechIcons } from "@ui";
 
@@ -22,4 +22,4 @@ export function ToolsCard({ name, displayName, rating }) {
   );
 }
 
-ToolsCard.propTypes = TechStacks;
+ToolsCard.propTypes = Tools;

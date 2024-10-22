@@ -4,7 +4,7 @@ import { ScrollHint } from "@ui";
 
 import "./app.css";
 
-const dummyTechStacks = [
+const dummyTools = [
   {
     name: "react",
     category: ["Frontend", "Full stack development"],
@@ -145,7 +145,7 @@ export default function App() {
       <Navbar />
 
       <HomePage />
-      <About techStacks={dummyTechStacks} />
+      <About tools={dummyTools} />
 
       <ScrollHint className={"scroll_hint"} />
     </>

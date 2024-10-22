@@ -16,9 +16,9 @@ export default function HomepageHeroCTA() {
           <p>@niyoj</p>
           <div className={styles["social_links"]}>
             <div className={styles["arrow_line"]} />
-            <GitHub height="1.25rem" width="" />
-            <Linkedin height="1.25rem" width="" />
-            <Twitter height="1.25rem" width="" />
+            <GitHub height="1.25rem" />
+            <Linkedin height="1.25rem" />
+            <Twitter height="1.25rem" />
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@ export default function HomepageHeroCTA() {
           work?&rsquo; then turns it into something that works even better.
         </p>
         <Button className={styles["homepage__cta"]}>
-          Arrange a meet <Redirect style={{ height: 24 }} />{" "}
+          Arrange a meet <Redirect style={{ height: 24 }} />
         </Button>
       </div>
       <SolidPlus

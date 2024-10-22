@@ -2,24 +2,24 @@ import Arrow from "@assets/images/icons/arrow-right.svg?react";
 import { ToolsCard } from "../tools-card/tools-card";
 
 import styles from "./tools-display.module.css";
+import { Tools } from "../prop-types";
+import PropTypes from "prop-types";
 
 export function ToolsDisplay({ tools }) {
   return (
-    <div
-      className={`${styles["about__main__display"]} ${styles["scrollable"]}`}
-    >
+    <div className={`${styles["display"]} ${styles["display--scrollable"]}`}>
       <div
         className={`${styles["arrow_swipe"]} ${styles["arrow_swipe--left"]}`}
       >
         <Arrow />
       </div>
 
-      {tools.map((techStack) => (
+      {tools.map((tool) => (
         <ToolsCard
-          key={techStack.name}
-          name={techStack.name}
-          displayName={techStack.displayName ?? techStack.name}
-          rating={techStack.rating}
+          key={tool.name}
+          name={tool.name}
+          displayName={tool.displayName ?? tool.name}
+          rating={tool.rating}
         />
       ))}
 
@@ -31,3 +31,7 @@ export function ToolsDisplay({ tools }) {
     </div>
   );
 }
+
+ToolsDisplay.propTypes = {
+  tools: PropTypes.arrayOf(Tools),
+};

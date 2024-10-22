@@ -1,4 +1,4 @@
-.about__main__display {
+.display {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -9,11 +9,12 @@
   padding: 2rem;
 }
 
-.about__main__display::-webkit-scrollbar {
-  display: none;
+.display::-webkit-scrollbar {
+  display: none; /*hiding scrollbars*/
 }
 
-.about__main__display.scrollable:hover .arrow_swipe {
+/* if scrollable and hovered then show arrow hints */
+.display.display--scrollable:hover .arrow_swipe {
   display: block;
 }
 
@@ -25,6 +26,17 @@
   border: 2px solid #c5c5c5c5;
   padding: 0.5rem;
   border-radius: 50%;
+  z-index: 20; /*should have highest z-index*/
+}
+
+.arrow_swipe--left {
+  left: 0;
+  transform: rotate(180deg) translateY(50%); /*flipping horizontally plus translating for center alignement*/
+}
+
+.arrow_swipe--right {
+  transform: translateY(-50%);
+  right: 0;
 }
 
 .arrow_swipe svg {
@@ -32,15 +44,6 @@
   fill: var(--color-100);
   animation: goright 1s cubic-bezier(0.82, -0.07, 0.58, 1) 0.15s alternate;
   animation-fill-mode: forwards;
-}
-
-.arrow_swipe--left {
-  left: 0;
-  transform: rotate(180deg) translateY(50%);
-}
-.arrow_swipe--right {
-  transform: translateY(-50%);
-  right: 0;
 }
 
 @keyframes goright {

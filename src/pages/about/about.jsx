@@ -5,7 +5,8 @@ import { AboutMain } from "./about-main/about-main";
 import Angle from "@assets/images/icons/angle.svg?react";
 
 import styles from "./about.module.css";
-import { TechStacks } from "./prop-types";
+import { Tools } from "./prop-types";
+import PropTypes from "prop-types";
 
 export const About = forwardRef((props, ref) => {
   return (
@@ -35,7 +36,7 @@ export const About = forwardRef((props, ref) => {
         </div>
       </header>
 
-      <AboutMain techStacks={props.techStacks} />
+      <AboutMain tools={props.tools} />
     </section>
   );
 });
@@ -43,5 +44,5 @@ export const About = forwardRef((props, ref) => {
 About.displayName = "About";
 
 About.propTypes = {
-  techStacks: TechStacks,
+  tools: PropTypes.arrayOf(Tools).isRequired,
 };

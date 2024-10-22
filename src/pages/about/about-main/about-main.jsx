@@ -2,22 +2,24 @@ import { useState } from "react";
 
 import styles from "./about-main.module.css";
 
-import { TechStacks } from "../prop-types";
+import { Tools } from "../prop-types";
 import { FilterTech } from "../filter-tech/filter-tech";
 import { ToolsDisplay } from "../tools-display/tools-display";
+import PropTypes from "prop-types";
 
-export function AboutMain({ techStacks = [] }) {
+export function AboutMain({ tools = [] }) {
   const [filtered, setFiltered] = useState([]);
 
-  const categories = techStacks
-    .map((techStack) => techStack.category)
+  const categories = tools
+    .map((tool) => tool.category)
     .flat()
     .filter((item, index, arr) => arr.indexOf(item) === index);
 
-  const visibleTechStacks =
+  // if no filter chips selected then show all else filter and show
+  const visibleTools =
     filtered.length === 0
-      ? techStacks
-      : techStacks.filter((item) =>
+      ? tools
+      : tools.filter((item) =>
         item.category.some((element) => filtered.includes(element)),
       );
 
@@ -34,12 +36,12 @@ export function AboutMain({ techStacks = [] }) {
       <FilterTech categories={categories} onFilterChange={handleFilterChange} />
 
       <div className={styles["about__main__display--container"]}>
-        <ToolsDisplay tools={visibleTechStacks} />
+        <ToolsDisplay tools={visibleTools} />
       </div>
     </main>
   );
 }
 
 AboutMain.propTypes = {
-  techStacks: TechStacks,
+  tools: PropTypes.arrayOf(Tools),
 };
