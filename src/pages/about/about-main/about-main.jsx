@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-import { Chips } from "@ui";
-import Arrow from "@assets/images/icons/arrow-right.svg?react";
-
 import styles from "./about-main.module.css";
 
 import { TechStacks } from "../prop-types";
-import { ToolsCard } from "../tools-card/tools-card";
+import { FilterTech } from "../filter-tech/filter-tech";
+import { ToolsDisplay } from "../tools-display/tools-display";
 
 export function AboutMain({ techStacks = [] }) {
   const [filtered, setFiltered] = useState([]);
@@ -16,6 +14,13 @@ export function AboutMain({ techStacks = [] }) {
     .flat()
     .filter((item, index, arr) => arr.indexOf(item) === index);
 
+  const visibleTechStacks =
+    filtered.length === 0
+      ? techStacks
+      : techStacks.filter((item) =>
+        item.category.some((element) => filtered.includes(element)),
+      );
+
   const handleFilterChange = (name, checked) => {
     if (checked) {
       setFiltered((prev) => [name, ...prev]);
@@ -24,51 +29,12 @@ export function AboutMain({ techStacks = [] }) {
     }
   };
 
-  const visibleTechStacks =
-    filtered.length === 0
-      ? techStacks
-      : techStacks.filter((item) =>
-        item.category.some((element) => filtered.includes(element)),
-      );
-
   return (
     <main className={styles["about__main"]}>
-      <div className={styles["about__main__select"]}>
-        <small>Filter tools by category</small>
+      <FilterTech categories={categories} onFilterChange={handleFilterChange} />
 
-        <div className={styles["about__main__select__list"]}>
-          {categories.map((item, index) => (
-            <Chips key={index} onChange={handleFilterChange.bind(null, item)}>
-              {item}
-            </Chips>
-          ))}
-        </div>
-      </div>
       <div className={styles["about__main__display--container"]}>
-        <div
-          className={`${styles["about__main__display"]} ${styles["scrollable"]}`}
-        >
-          <div
-            className={`${styles["arrow_swipe"]} ${styles["arrow_swipe--left"]}`}
-          >
-            <Arrow />
-          </div>
-
-          {visibleTechStacks.map((techStack) => (
-            <ToolsCard
-              key={techStack.name}
-              name={techStack.name}
-              displayName={techStack.displayName ?? techStack.name}
-              rating={techStack.rating}
-            />
-          ))}
-
-          <div
-            className={`${styles["arrow_swipe"]} ${styles["arrow_swipe--right"]}`}
-          >
-            <Arrow />
-          </div>
-        </div>
+        <ToolsDisplay tools={visibleTechStacks} />
       </div>
     </main>
   );

@@ -1,0 +1,17 @@
+.filter {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.filter > small {
+  display: block;
+  margin-bottom: var(--font-small);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.filter__list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
