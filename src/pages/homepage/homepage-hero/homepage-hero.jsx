@@ -19,17 +19,6 @@ export default function HomepageHero() {
       </div>
 
       <HomepageHeroCTA />
-
-      <div className={styles["homepage__hero__content"]}>
-        <small>
-          I&apos;m a full stack developer, AI/ML enthusiast, and I often design
-          and write blogs.
-        </small>
-        <small style={{ textAlign: "right" }}>
-          If there&apos;s a community event, count me in! I&apos;m always open
-          to connecting and contributing.
-        </small>
-      </div>
     </div>
   );
 }

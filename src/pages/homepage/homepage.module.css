@@ -1,12 +1,23 @@
 .homepage {
   position: relative;
-  display: flex;
-  padding: 0 100px;
   width: 100vw;
-  margin-top: 100px;
   min-height: calc(100vh - 100px);
-  gap: 100px;
+  margin-top: 100px;
+  padding: 0 100px;
   overflow: visible;
+
+  display: grid;
+  gap: 0 100px;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+}
+
+.homepage__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  position: relative;
+  gap: 100px;
 }
 
 @media screen and (max-width: 750px) {
@@ -15,6 +26,12 @@
     min-height: calc(100vh - 50px);
     gap: 50px;
 
-    flex-direction: column;
+    /* creating a grid of 3 by 2*/
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+  }
+
+  .homepage__bottom {
+    gap: 1rem;
   }
 }
