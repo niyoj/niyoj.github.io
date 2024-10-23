@@ -40,14 +40,9 @@
 
 .social_icons {
   height: var(--font-h3);
-  margin-left: -0.6rem;
+  margin-right: 1rem;
 }
 
 .social_icons path {
   fill: #ffffff;
 }
-
-
-/* media query for responsivness begins here */
-/* @media screen and () */
-/* media query for responsivness end here */
