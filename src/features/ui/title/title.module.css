@@ -1,0 +1,19 @@
+.title {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+
+  width: max-content; /*ensures the width doesn't increases like in flex*/
+  align-self: flex-start; /*fallback for max-content*/
+}
+
+.title--inverse {
+  border-color: #000;
+  color: #000;
+}
+
+.title--solid {
+  background-color: #000;
+  color: #fff;
+}

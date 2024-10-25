@@ -5,7 +5,7 @@ import Check from "@assets/images/icons/check.svg?react";
 
 import styles from "./chips.module.css";
 
-export function Chips({ children, onChange = () => { } }) {
+export function Chips({ children, onChange = () => {} }) {
   const [checked, setChecked] = useState(false);
 
   const handleChipsClicked = () => {
@@ -28,5 +28,5 @@ export function Chips({ children, onChange = () => { } }) {
 
 Chips.propTypes = {
   children: PropTypes.node.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };

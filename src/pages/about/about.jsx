@@ -1,19 +1,19 @@
 import { forwardRef } from "react";
+import PropTypes from "prop-types";
 
 import { AboutMain } from "./about-main/about-main";
-
 import Angle from "@assets/images/icons/angle.svg?react";
+import {Title} from "@ui";
 
-import styles from "./about.module.css";
 import { Tools } from "./prop-types";
-import PropTypes from "prop-types";
+import styles from "./about.module.css";
 
 export const About = forwardRef((props, ref) => {
   return (
     <section className={styles["about"]} ref={ref}>
       <header className={styles["about__header"]}>
         <div className={styles["about__header--left"]}>
-          <small>About Me</small>
+          <Title>About me</Title>
           <h1>Gears I work with</h1>
         </div>
         <div className={styles["about__header--right"]}>

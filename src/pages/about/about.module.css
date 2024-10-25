@@ -22,17 +22,6 @@
   justify-content: space-between;
 }
 
-.about__header--right {
-}
-
-.about__header--left small:first-child {
-  align-self: flex-start;
-  display: block;
-  border: 1px solid #ffffff;
-  padding: 0.25rem 1rem;
-  border-radius: 1rem;
-}
-
 .about__header--right p {
   text-align: right;
   border-bottom: 1px solid #ccc4cf;

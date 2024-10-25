@@ -1,0 +1,29 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin: 50px 100px;
+
+  width: calc(100vw - 2 * 100px);
+  height: calc(100vh - 2 * 50px);
+
+  --base-size: 150px;
+}
+
+.portfolio__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.portfolio__display {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(calc(var(--base-size) * 1.44 + 1rem), 1fr)
+  );
+  grid-template-rows: repeat(2, auto); /* Maximum of 2 rows */
+  grid-auto-flow: row; /* Fill row by row */
+  gap: 1rem; /* Adjust the gap between items */
+}
