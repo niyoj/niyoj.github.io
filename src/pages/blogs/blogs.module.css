@@ -2,4 +2,14 @@
   background-color: #100d12;
   margin: 50px 0;
   padding: 50px 100px;
+
+  max-height: calc(100vh - 50px);
+}
+
+.blogs__display {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 1rem;
 }
