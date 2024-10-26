@@ -1,25 +1,29 @@
 import PropTypes from "prop-types";
+
+import Arrow from "@assets/images/icons/arrow-right.svg?react";
+
 import styles from "./portfolio-card.module.css";
 
-export function PortfolioCard({ tags }) {
+export function PortfolioCard({ title, name }) {
   return (
-    <div className={styles["card"]}>
-      <div className={styles["card__cover"]}>
-        <div />
-        <div className={styles["card__cover__tags"]}>
-          {tags.map((item) => (
-            <small key="item">{item}</small>
-          ))}
-        </div>
+    <div className={styles["card__wrapper"]}>
+      <div
+        className={styles["card"]}
+        style={{ backgroundImage: `url(/projects/${name}.png)` }}
+      >
+        <p>{title}</p>
       </div>
-      <div className={styles["card__info"]}>
-        <h3>EMIS</h3>
-        <small>Information Management System for IOE, Thapathali Campus</small>
+
+      <div className={styles["card__arrow"]}>
+        <div className={styles["card__arrow__wrapper"]}>
+          <Arrow />
+        </div>
       </div>
     </div>
   );
 }
 
 PortfolioCard.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };

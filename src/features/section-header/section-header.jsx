@@ -5,11 +5,20 @@ import Angle from "@assets/images/icons/angle.svg?react";
 
 import styles from "./section-header.module.css";
 
-export function SectionHeader({ title, subtitle = " ", description = " " }) {
+export function SectionHeader({
+  title,
+  subtitle = " ",
+  description = " ",
+  inverse = false,
+}) {
   return (
-    <header className={styles["section_header"]}>
+    <header
+      className={`${styles["section_header"]} ${inverse ? styles["section_header--inverse"] : ""}`}
+    >
       <div className={styles["section_header--left"]}>
-        <Title>{title}</Title>
+        <Title inverse={true} solid={true}>
+          {title}
+        </Title>
         <h1>{subtitle}</h1>
       </div>
 
@@ -36,4 +45,5 @@ SectionHeader.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   description: PropTypes.string,
+  inverse: PropTypes.bool,
 };

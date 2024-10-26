@@ -49,3 +49,19 @@
 .section_header__btn_wrapper button:hover path {
   fill: #ffffff;
 }
+
+.section_header--inverse .section_header__btn_wrapper button:hover path {
+  fill: #000000;
+}
+
+.section_header--inverse .section_header__btn_wrapper button path {
+  fill: #7e747d;
+}
+
+.section_header--inverse .section_header__btn_wrapper button {
+  border-color: #7e747d;
+}
+
+.section_header--inverse .section_header__btn_wrapper button:hover {
+  border-color: #000000;
+}

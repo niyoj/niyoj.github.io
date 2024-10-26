@@ -1,53 +1,79 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.5rem;
-  border: 1px solid var(--color-300);
-  border-radius: 0.5rem;
+.card__wrapper {
+  position: relative;
+}
 
-  /* setting up background */
+.card {
+  flex: 0 0 auto;
+
+  --base-height: 400px;
+  width: calc(var(--base-height) * 4 / 3);
+  height: var(--base-height);
+
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
 
-  /* calculating height from js value */
-  width: calc(150px * 1.44 + 1rem);
-
-  --base-size: 150px;
-}
-
-.card__cover {
-  position: relative;
-  min-height: calc(var(--font-small) * 2);
-
-  border: 1px solid var(--color-300);
-  border-radius: 0.5rem;
   overflow: hidden;
+  border-radius: 0.5rem;
 }
 
-/* trying to figure out size of cover image */
-.card__cover > div:first-child {
-  width: calc(var(--base-size) * 1.44);
-  height: calc(var(--base-size));
-  background-color: green;
+.card p {
+  background: var(--color-500);
+  transform-origin: left bottom;
+  transform: translateX(0px) translateY(100px) rotate(-45deg);
+  padding: 0.15rem 2rem;
+
+  color: white;
+  font-weight: 600;
 }
 
-.card__cover__tags {
+.card__arrow {
   position: absolute;
-  top: calc(var(--font-small) * 0.5);
-  right: calc(var(--font-small) * 0.5);
+  top: 0;
+  left: 0;
 
+  /* centering flex items */
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: calc(var(--font-small) * 0.5);
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: #21202282;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  /* only seen on hover */
+  display: none;
 }
 
-.card__cover__tags small {
-  background-color: var(--color-500);
-  color: #fff;
-  border: 1px solid var(--color-300);
-  padding: calc(var(--font-small) * 0.5) var(--font-small);
-  border-radius: var(--font-small);
+.card__arrow__wrapper {
+  padding: 1rem;
+  border: 3px dashed var(--color-50);
+  border-radius: 50%;
+
+  transform: rotate(-30deg);
+}
+
+.card__arrow__wrapper svg {
+  fill: var(--color-50);
+  height: var(--font-h1);
+  animation: animateArrow 1.5s infinite cubic-bezier(0.87, -0.12, 0.21, 1.03)
+    alternate;
+}
+
+.card__wrapper:hover .card {
+  filter: blur(1px);
+}
+
+.card__wrapper:hover .card__arrow {
+  display: flex;
+}
+
+@keyframes animateArrow {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(65%);
+  }
 }

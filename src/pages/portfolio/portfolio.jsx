@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import { Title } from "@ui";
+import { SectionHeader } from "@features";
 
 import styles from "./portfolio.module.css";
 import { PortfolioCard } from "./protfolio-card/porfolio-card";
@@ -8,20 +8,21 @@ import { PortfolioCard } from "./protfolio-card/porfolio-card";
 export const Portfolio = forwardRef((props, ref) => {
   return (
     <section className={styles["portfolio"]} ref={ref}>
-      <header className={styles["portfolio__header"]}>
-        <Title inverse={true} solid={true}>
-          My Projects
-        </Title>
-        <h1>Featuring My Recent Works</h1>
-      </header>
+      <div className={styles["portfolio__header"]}>
+        <SectionHeader
+          title="My projects"
+          subtitle="Featuring my recent works"
+          description="I merge design, coding, cloud, and AI to create tools that not only help me but also teach me something new along the way."
+          inverse={true}
+        />
+      </div>
 
       <div className={styles["portfolio__display"]}>
-        <PortfolioCard tags={["web app"]} />
-        <PortfolioCard tags={["AI/ML"]} />
-        <PortfolioCard tags={["web app"]} />
-        <PortfolioCard tags={["AI/ML"]} />
-        <PortfolioCard tags={["web app"]} />
-        <PortfolioCard tags={["AI/ML"]} />
+        <PortfolioCard title="Focus Timer" name="pomodize"/>
+        <PortfolioCard title="Focus Timer" name="pomodize"/>
+        <PortfolioCard title="Focus Timer" name="pomodize"/>
+        <PortfolioCard title="Focus Timer" name="pomodize"/>
+        <PortfolioCard title="Focus Timer" name="pomodize"/>
       </div>
     </section>
   );
