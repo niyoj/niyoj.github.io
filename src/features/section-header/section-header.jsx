@@ -16,7 +16,7 @@ export function SectionHeader({
       className={`${styles["section_header"]} ${inverse ? styles["section_header--inverse"] : ""}`}
     >
       <div className={styles["section_header--left"]}>
-        <Title inverse={true} solid={true}>
+        <Title inverse={inverse} solid={inverse}>
           {title}
         </Title>
         <h1>{subtitle}</h1>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Navbar } from "@features";
-import { HomePage, About, Portfolio } from "@pages";
+import { HomePage, About, Portfolio, Blogs, Contact } from "@pages";
 import { ScrollHint } from "@ui";
 
 import { tools } from "@/data";
@@ -32,6 +32,8 @@ export default function App() {
       <HomePage />
       <About tools={tools} />
       <Portfolio ref={portfolioRef} height={portfolioHt} />
+      <Blogs />
+      <Contact />
 
       <ScrollHint className={"scroll_hint"} />
     </>

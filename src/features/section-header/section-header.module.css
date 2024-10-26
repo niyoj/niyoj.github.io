@@ -3,6 +3,11 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
+  color: #ffffff;
+}
+
+.section_header--inverse {
+  color: #000000;
 }
 
 .section_header--left {
