@@ -1,12 +1,3 @@
-/* .about { */
-/*   padding: 50px; */
-/*   margin: 100px 50px 50px; */
-/*   width: calc(100vw - 100px); */
-/*   background-color: #100d12; */
-/*   color: #ffffff; */
-/*   border-radius: 50px; */
-/* } */
-
 .about {
   padding: 50px 100px;
   width: calc(100vw);
