@@ -18,6 +18,13 @@ export function Navbar() {
 
   const handleHamburgerClicked = () => {
     setNavActive((prev) => !prev);
+
+    // disabling scroll when active 
+    if (!navActive) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "initial";
+    }
   };
 
   const logoProps = delayLogo

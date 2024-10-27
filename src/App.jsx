@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Navbar } from "@features";
-import { HomePage, About, Portfolio, Blogs, Contact } from "@pages";
+import { useDelay } from "@ui";
+import {
+  HomePage,
+  About,
+  Portfolio,
+  Blogs,
+  Contact,
+  NavigationPage,
+} from "@pages";
 import { ScrollHint } from "@ui";
 
 import { tools } from "@/data";

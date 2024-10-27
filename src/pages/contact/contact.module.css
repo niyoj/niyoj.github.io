@@ -1,5 +1,6 @@
 .contact {
   padding: 50px 100px;
+  margin-bottom: 0;
   width: 100vw;
   height: calc(100vh - 2 * 50px);
 
@@ -59,7 +60,7 @@
 @media screen and (max-width: 750px) {
   .contact {
     padding: 50px;
-    margin-bottom: 0;
+    height: 100vh;
   }
 
   .contact__list {
