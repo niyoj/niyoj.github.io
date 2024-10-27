@@ -7,6 +7,8 @@
   height: calc(100vh - 2 * 50px);
 
   --base-size: 150px;
+
+  overflow-x: hidden;
 }
 
 .portfolio__header {
@@ -19,6 +21,7 @@
   flex-wrap: nowrap;
 
   animation: marquee 20s linear infinite alternate; /* Animation to scroll items */
+  margin-top: 2rem;
 }
 
 .portfolio__display:hover {
@@ -32,5 +35,11 @@
   }
   100% {
     transform: translateX(-50%); /* End at the left */
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .portfolio__header {
+    margin: 0 50px;
   }
 }

@@ -4,3 +4,9 @@
   background-color: #100d12;
   color: #ffffff;
 }
+
+@media screen and (max-width: 750px) {
+  .about {
+    padding: 50px;
+  }
+}

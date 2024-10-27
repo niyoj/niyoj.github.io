@@ -55,3 +55,26 @@
   display: flex;
   gap: 2rem;
 }
+
+@media screen and (max-width: 750px) {
+  .contact {
+    padding: 50px;
+    margin-bottom: 0;
+  }
+
+  .contact__list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .contact footer ul {
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+  }
+}

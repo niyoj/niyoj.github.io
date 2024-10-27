@@ -70,3 +70,14 @@
 .section_header--inverse .section_header__btn_wrapper button:hover {
   border-color: #000000;
 }
+
+@media screen and (max-width: 750px) {
+  /* .section_header { */
+  /*   flex-direction: column; */
+  /* } */
+
+  .section_header--right p {
+    display: none;
+    background: red;
+  }
+}
