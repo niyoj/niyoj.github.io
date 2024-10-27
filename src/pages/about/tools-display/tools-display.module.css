@@ -7,6 +7,9 @@
   overflow-y: visible;
   scrollbar-width: none;
   padding: 2rem;
+
+  scroll-snap-type: both mandatory;
+  direction: ltr;
 }
 
 .display::-webkit-scrollbar {

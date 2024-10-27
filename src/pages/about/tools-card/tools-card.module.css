@@ -11,6 +11,9 @@
   transition: transform 0.25s ease-in;
   flex: 0 1 auto;
   border-color: var(--color-300);
+
+  scroll-snap-align: center;
+  scroll-margin-left: 5rem;
 }
 
 .card__icon {
@@ -58,7 +61,7 @@
 }
 
 .card:hover {
-  transform: scale(1.1) rotate(15deg);
-  transition: transform 0.25s ease-out;
+  /* transform: scale(1.1); */
+  /* transition: transform 0.25s ease-out; */
   cursor: pointer;
 }
