@@ -34,12 +34,16 @@
     transform: translateX(0%); /* Start from the right */
   }
   100% {
-    transform: translateX(-50%); /* End at the left */
+    transform: translateX(calc(-100% + 100vw - 50px)); /* End at the left */
   }
 }
 
 @media screen and (max-width: 750px) {
   .portfolio__header {
     margin: 0 50px;
+  }
+
+  .portfolio__display {
+    /* animation-duration: 4s; */
   }
 }

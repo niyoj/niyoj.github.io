@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 
 import { SectionHeader } from "@features";
 
@@ -6,6 +6,8 @@ import styles from "./portfolio.module.css";
 import { PortfolioCard } from "./protfolio-card/porfolio-card";
 
 export const Portfolio = forwardRef((props, ref) => {
+  const cardNum = 5;
+
   return (
     <section className={styles["portfolio"]} ref={ref}>
       <div className={styles["portfolio__header"]}>
@@ -17,12 +19,15 @@ export const Portfolio = forwardRef((props, ref) => {
         />
       </div>
 
-      <div className={styles["portfolio__display"]}>
-        <PortfolioCard title="Focus Timer" name="pomodize"/>
-        <PortfolioCard title="Focus Timer" name="pomodize"/>
-        <PortfolioCard title="Focus Timer" name="pomodize"/>
-        <PortfolioCard title="Focus Timer" name="pomodize"/>
-        <PortfolioCard title="Focus Timer" name="pomodize"/>
+      <div
+        className={styles["portfolio__display"]}
+        style={{ width: `calc( ( 400px * 4 / 3 + 1rem ) * ${cardNum} )` }}
+      >
+        <PortfolioCard title="Focus Timer" name="pomodize" />
+        <PortfolioCard title="Focus Timer" name="pomodize" />
+        <PortfolioCard title="Focus Timer" name="pomodize" />
+        <PortfolioCard title="Focus Timer" name="pomodize" />
+        <PortfolioCard title="Focus Timer" name="pomodize" />
       </div>
     </section>
   );
