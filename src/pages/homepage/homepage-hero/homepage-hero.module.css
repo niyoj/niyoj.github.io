@@ -7,7 +7,7 @@
 }
 
 .homepage__hero .homepage__hero__name h3,
-h1 {
+.homepage__hero .homepage__hero__name h1 {
   transform: translateX(-20%);
   opacity: 0;
 }

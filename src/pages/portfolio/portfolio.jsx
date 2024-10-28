@@ -1,4 +1,5 @@
-import { forwardRef, useEffect } from "react";
+import { forwardRef } from "react";
+import PropTypes from "prop-types";
 
 import { SectionHeader } from "@features";
 
@@ -16,12 +17,16 @@ export const Portfolio = forwardRef((props, ref) => {
           subtitle="Featuring my recent works"
           description="I merge design, coding, cloud, and AI to create tools that not only help me but also teach me something new along the way."
           inverse={true}
+          visible={props.visible}
         />
       </div>
 
       <div
         className={styles["portfolio__display"]}
-        style={{ width: `calc( ( 400px * 4 / 3 + 1rem ) * ${cardNum} )` }}
+        style={{
+          width: `calc( ( 400px * 4 / 3 + 1rem ) * ${cardNum} )`,
+          animationPlayState: props.visible ? "" : "paused",
+        }}
       >
         <PortfolioCard title="Focus Timer" name="pomodize" />
         <PortfolioCard title="Focus Timer" name="pomodize" />
@@ -34,3 +39,6 @@ export const Portfolio = forwardRef((props, ref) => {
 });
 
 Portfolio.displayName = "Portfolio";
+Portfolio.propTypes = {
+  visible: PropTypes.bool,
+};

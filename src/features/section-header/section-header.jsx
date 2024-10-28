@@ -10,10 +10,11 @@ export function SectionHeader({
   subtitle = " ",
   description = " ",
   inverse = false,
+  visible,
 }) {
   return (
     <header
-      className={`${styles["section_header"]} ${inverse ? styles["section_header--inverse"] : ""}`}
+      className={`${styles["section_header"]} ${inverse ? styles["section_header--inverse"] : ""} ${visible ? styles["visible"] : ""}`}
     >
       <div className={styles["section_header--left"]}>
         <Title inverse={inverse} solid={inverse}>
@@ -46,4 +47,5 @@ SectionHeader.propTypes = {
   subtitle: PropTypes.string,
   description: PropTypes.string,
   inverse: PropTypes.bool,
+  visible: PropTypes.bool,
 };

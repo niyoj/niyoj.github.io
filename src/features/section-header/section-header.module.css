@@ -81,3 +81,34 @@
     background: red;
   }
 }
+
+.section_header .section_header--left > * {
+  transform: translate(-20%);
+  opacity: 0;
+}
+.section_header.visible .section_header--left > * {
+  animation: animate 0.75s ease-out 1;
+  animation-fill-mode: forwards;
+}
+.section_header.visible .section_header--left h1 {
+  animation-delay: 0.25s;
+}
+
+.section_header .section_header--right > * {
+  transform: translate(20%);
+  opacity: 0;
+}
+.section_header.visible .section_header--right > * {
+  animation: animate 0.75s ease-out 1;
+  animation-fill-mode: forwards;
+}
+.section_header.visible .section_header--right > div {
+  animation-delay: 0.25s;
+}
+
+@keyframes animate {
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}

@@ -14,6 +14,7 @@ export const About = forwardRef((props, ref) => {
         title="About me"
         subtitle="Gears I work with"
         description="I design, code, write, and work with cloud and AI, aiming for clean code and mastery."
+        visible={props.visible}
       />
 
       <AboutMain tools={props.tools} />
@@ -25,4 +26,5 @@ About.displayName = "About";
 
 About.propTypes = {
   tools: PropTypes.arrayOf(Tools).isRequired,
+  visible: PropTypes.bool,
 };

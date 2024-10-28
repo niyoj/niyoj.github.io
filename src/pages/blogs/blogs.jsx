@@ -24,6 +24,7 @@ export const Blogs = forwardRef((props, ref) => {
         title="My blogs"
         subtitle="Some of my writings"
         description="I enjoy sharing what I've learned, collecting insights and experiences into blogs that I share to help others explore new ideas and skills."
+        visible={props.visible}
       />
 
       <div className={styles["blogs__display"]}>
