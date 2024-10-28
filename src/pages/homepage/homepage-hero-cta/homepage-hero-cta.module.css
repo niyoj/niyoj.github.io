@@ -28,6 +28,26 @@
   gap: 0.5rem;
 }
 
+.homepage__hero__cta .homepage__hero__cta--left {
+  transform: translateX(-20%);
+  opacity: 0;
+}
+
+.homepage__hero__cta.visible .homepage__hero__cta--left {
+  animation: toRight 1s 0.4s ease-out 1;
+  animation-fill-mode: forwards;
+}
+
+.homepage__hero__cta .homepage__hero__cta--right {
+  transform: translateX(20%);
+  opacity: 0;
+}
+
+.homepage__hero__cta.visible .homepage__hero__cta--right {
+  animation: toLeft 1s 0.4s ease-out 1;
+  animation-fill-mode: forwards;
+}
+
 @media screen and (max-width: 750px) {
   .homepage__cta {
     padding-left: 1rem;
@@ -78,4 +98,26 @@
   bottom: -10px;
   right: 0;
   transform: translate(100%, 50%);
+}
+
+@keyframes toRight {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toLeft {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

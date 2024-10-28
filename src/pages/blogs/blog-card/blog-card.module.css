@@ -40,7 +40,7 @@
   display: block;
   margin-top: var(--font-small);
   line-height: 1.5;
-  max-height: calc(4 * 1.5 * var(--font-small));
+  max-height: calc(3 * 1.5 * var(--font-small));
   overflow: hidden;
 }
 

@@ -5,3 +5,30 @@
   gap: 4rem;
   padding-top: 40px;
 }
+
+.homepage__hero .homepage__hero__name h3,
+h1 {
+  transform: translateX(-20%);
+  opacity: 0;
+}
+
+.homepage__hero.homepage__hero--visible .homepage__hero__name h3 {
+  animation: toLeft 1s ease-out 1;
+  animation-fill-mode: forwards;
+}
+
+.homepage__hero.homepage__hero--visible .homepage__hero__name h1 {
+  animation: toLeft 1s 0.25s ease-out 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes toLeft {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

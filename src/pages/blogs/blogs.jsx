@@ -1,7 +1,10 @@
+import { forwardRef } from "react";
+import PropTypes from "prop-types";
+
 import { SectionHeader } from "@features";
+import { BlogCard } from "./blog-card/blog-card";
 
 import styles from "./blogs.module.css";
-import { BlogCard } from "./blog-card/blog-card";
 
 const dummyBlog = {
   readTime: 8,
@@ -11,9 +14,12 @@ const dummyBlog = {
     "Not only can Doctor Strange in the MCU create portals, but as a React developer, so can you! This blog is a mighty scroll that helps you master the React portals so that you can teleport those React components on your own.",
 };
 
-export function Blogs() {
+export const Blogs = forwardRef((props, ref) => {
   return (
-    <section className={styles["blogs"]}>
+    <section
+      className={`${styles["blogs"]} ${props.visible ? styles["blogs--visible"] : ""}`}
+      ref={ref}
+    >
       <SectionHeader
         title="My blogs"
         subtitle="Some of my writings"
@@ -48,4 +54,10 @@ export function Blogs() {
       </div>
     </section>
   );
-}
+});
+
+Blogs.displayName = "Blogs";
+
+Blogs.propTypes = {
+  visible: PropTypes.bool,
+};

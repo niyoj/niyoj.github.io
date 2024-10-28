@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import PropTypes from "prop-types";
 
 import styles from "./homepage.module.css";
 
@@ -7,9 +8,12 @@ import HomepageHero from "./homepage-hero/homepage-hero";
 
 export const HomePage = forwardRef((props, ref) => {
   return (
-    <section className={styles["homepage"]} ref={ref}>
-      <HomepageHero />
-      <HomepageSide />
+    <section
+      className={`${styles["homepage"]} ${props.visible ? styles["homepage--visible"] : ""}`}
+      ref={ref}
+    >
+      <HomepageHero visible={props.visible} />
+      <HomepageSide visible={props.visible} />
 
       <div className={styles["homepage__bottom"]}>
         <small>
@@ -26,3 +30,6 @@ export const HomePage = forwardRef((props, ref) => {
 });
 
 HomePage.displayName = "HomePage";
+HomePage.propTypes = {
+  visible: PropTypes.bool,
+};

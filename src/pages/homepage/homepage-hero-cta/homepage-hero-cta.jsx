@@ -7,10 +7,13 @@ import Redirect from "@assets/images/icons/open-in-blank.svg?react";
 import SolidPlus from "@assets/images/abstracts/solid-plus.svg?react";
 
 import styles from "./homepage-hero-cta.module.css";
+import PropTypes from "prop-types";
 
-export default function HomepageHeroCTA() {
+export default function HomepageHeroCTA({ visible }) {
   return (
-    <div className={styles["homepage__hero__cta"]}>
+    <div
+      className={`${styles["homepage__hero__cta"]} ${visible ? styles["visible"] : ""}`}
+    >
       <div className={styles["homepage__hero__cta--left"]}>
         <div className={styles["rotated"]}>
           <p>@niyoj</p>
@@ -38,3 +41,7 @@ export default function HomepageHeroCTA() {
     </div>
   );
 }
+
+HomepageHeroCTA.propTypes = {
+  visible: PropTypes.bool,
+};

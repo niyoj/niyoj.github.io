@@ -56,3 +56,27 @@
   right: 0;
   transform: rotate(-30deg) translate(-50%);
 }
+
+.homepage__side .homepage__side__headshot {
+  transform: translateX(10%);
+  opacity: 0;
+}
+.homepage__side .homepage__side__headshotbg {
+  transform: translateX(-10%);
+  opacity: 0;
+}
+.homepage__side .abstract--zigzag_1 {
+}
+
+.homepage__side.visible .homepage__side__headshot,
+.homepage__side.visible .homepage__side__headshotbg {
+  animation: animate 0.5s ease-out 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}

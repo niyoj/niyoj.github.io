@@ -1,3 +1,6 @@
+import { forwardRef } from "react";
+import PropTypes from "prop-types";
+
 import { Logo } from "@ui";
 
 import GitHub from "@assets/images/icons/github.svg?react";
@@ -6,9 +9,12 @@ import Twitter from "@assets/images/icons/twitter.svg?react";
 
 import styles from "./contact.module.css";
 
-export function Contact() {
+export const Contact = forwardRef((props, ref) => {
   return (
-    <section className={styles["contact"]}>
+    <section
+      className={`${styles["contact"]} ${props.visible ? styles["contact--visible"] : ""}`}
+      ref={ref}
+    >
       <header className={styles["contact__header"]}>
         <p>Got a project? Looking to Collaborate?</p>
         <h1>
@@ -41,4 +47,9 @@ export function Contact() {
       </footer>
     </section>
   );
-}
+});
+
+Contact.displayName = "Contact";
+Contact.propTypes = {
+  visible: PropTypes.bool,
+};

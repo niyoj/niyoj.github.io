@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./homepage_headshot.module.css";
 
 import Headshot from "@assets/images/headshot.png";
@@ -7,9 +9,11 @@ import DotsCircle from "@assets/images/abstracts/dots-circle.svg?react";
 import Plus from "@assets/images/abstracts/plus.svg?react";
 import ZigZag from "@assets/images/abstracts/zigzag.svg?react";
 
-export default function HomepageSide() {
+export default function HomepageSide({ visible }) {
   return (
-    <div className={styles["homepage__side"]}>
+    <div
+      className={`${styles["homepage__side"]} ${visible ? styles["visible"] : ""}`}
+    >
       <ZigZag
         className={`${styles["abstract"]} ${styles["abstract--zigzag_1"]}`}
       />
@@ -31,3 +35,7 @@ export default function HomepageSide() {
     </div>
   );
 }
+
+HomepageSide.propTypes = {
+  visible: PropTypes.bool,
+};

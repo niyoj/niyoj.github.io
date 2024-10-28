@@ -1,10 +1,14 @@
+import PropTypes from "prop-types";
+
 import HomepageHeroCTA from "../homepage-hero-cta/homepage-hero-cta";
 
 import styles from "./homepage-hero.module.css";
 
-export default function HomepageHero() {
+export default function HomepageHero({ visible }) {
   return (
-    <div className={styles["homepage__hero"]}>
+    <div
+      className={`${styles["homepage__hero"]} ${visible ? styles["homepage__hero--visible"] : ""}`}
+    >
       <div className={styles["homepage__hero__name"]}>
         <h3>Hello, myself</h3>
         <h1
@@ -18,7 +22,11 @@ export default function HomepageHero() {
         </h1>
       </div>
 
-      <HomepageHeroCTA />
+      <HomepageHeroCTA visible={visible} />
     </div>
   );
 }
+
+HomepageHero.propTypes = {
+  visible: PropTypes.bool,
+};

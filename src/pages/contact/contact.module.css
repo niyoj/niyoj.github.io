@@ -57,6 +57,43 @@
   gap: 2rem;
 }
 
+.contact.contact--visible .contact__list a {
+  animation: slideRight 0.5s ease-out 1;
+}
+.contact.contact--visible .contact__header h1 span {
+  display: inline-block;
+  animation: drop 0.75s ease-out 1;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translate(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(-1rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 @media screen and (max-width: 750px) {
   .contact {
     padding: 50px;
