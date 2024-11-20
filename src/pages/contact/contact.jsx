@@ -26,8 +26,8 @@ export const Contact = forwardRef((props, ref) => {
       </header>
 
       <main className={styles["contact__list"]}>
-        <a href={`mailto:${getLink("email")}`}>
-          <p>{getLink("email")}</p>
+        <a href={`${getLink("calendly")}`}>
+          <p>{getLink("calendly")}</p>
         </a>
         <div className={styles["social_links"]}>
           <a href={getLink("github")} target="_blank">

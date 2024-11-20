@@ -5,7 +5,7 @@ const LINKS = {
   linkedin: "https://linkedin.com/in/niyoj",
   github: "https://github.com/niyoj",
   email: "niyoj.dev@gmail.com",
-  calendly: "https://calendly.com/niyoj",
+  calendly: "calendly.com/niyoj",
 };
 
 export function getLink(name) {
