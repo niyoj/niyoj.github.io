@@ -14,6 +14,7 @@ export const Contact = forwardRef((props, ref) => {
     <section
       className={`${styles["contact"]} ${props.visible ? styles["contact--visible"] : ""}`}
       ref={ref}
+      id="contact"
     >
       <header className={styles["contact__header"]}>
         <p>Got a project? Looking to Collaborate?</p>

@@ -36,7 +36,7 @@ const links = {
   twitter: "https://twitter.com/oliniyoj",
 };
 
-export function NavigationContent({ active = false }) {
+export function NavigationContent({ active = false, onNavigate }) {
   const [activities, setActivities] = useState(dummyActivities);
   const [menu1, setMenu1] = useState(dummyMenu1);
   const [menu2, setMenu2] = useState(dummyMenu2);
@@ -77,10 +77,20 @@ export function NavigationContent({ active = false }) {
     <main className={styles["navpage__main"]}>
       <div className={styles["navpage__main__top"]}>
         {menu1.length && (
-          <MenuList title="menu" items={menu1} active={active} />
+          <MenuList
+            title="menu"
+            items={menu1}
+            active={active}
+            onNavigate={onNavigate}
+          />
         )}
         {Boolean(menu2.length) && (
-          <MenuList title="menu" items={menu2} active={active} />
+          <MenuList
+            title="menu"
+            items={menu2}
+            active={active}
+            onNavigate={onNavigate}
+          />
         )}
         <Activities items={activities} active={active} ref={ref} />
       </div>
@@ -109,4 +119,5 @@ export function NavigationContent({ active = false }) {
 
 NavigationContent.propTypes = {
   active: PropTypes.bool,
+  onNavigate: PropTypes.func,
 };

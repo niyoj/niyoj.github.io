@@ -10,7 +10,7 @@ export const Portfolio = forwardRef((props, ref) => {
   const cardNum = 5;
 
   return (
-    <section className={styles["portfolio"]} ref={ref}>
+    <section className={styles["portfolio"]} ref={ref} id="portfolio">
       <div className={styles["portfolio__header"]}>
         <SectionHeader
           title="My projects"

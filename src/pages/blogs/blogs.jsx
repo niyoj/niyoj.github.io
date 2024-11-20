@@ -19,6 +19,7 @@ export const Blogs = forwardRef((props, ref) => {
     <section
       className={`${styles["blogs"]} ${props.visible ? styles["blogs--visible"] : ""}`}
       ref={ref}
+      id="blogs"
     >
       <SectionHeader
         title="My blogs"
