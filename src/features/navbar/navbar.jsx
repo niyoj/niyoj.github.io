@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { Logo } from "@ui";
 import { NavigationPage } from "@pages";
 
@@ -7,7 +9,7 @@ import styles from "./navbar.module.css";
 import { useState } from "react";
 import { useDelay } from "@ui";
 
-export function Navbar() {
+export function Navbar({ shorten = false }) {
   const [navActive, setNavActive] = useState(false);
 
   const delayLogo = useDelay(navActive, navActive ? 0.6 : 0.3);
@@ -19,7 +21,7 @@ export function Navbar() {
   const handleHamburgerClicked = () => {
     setNavActive((prev) => !prev);
 
-    // disabling scroll when active 
+    // disabling scroll when active
     if (!navActive) {
       document.body.style.overflowY = "hidden";
     } else {
@@ -27,13 +29,16 @@ export function Navbar() {
     }
   };
 
-  const logoProps = delayLogo
-    ? { type: "icon", inverse: true }
-    : { type: "default", inverse: false };
+  const logoProps =
+    delayLogo || shorten
+      ? { type: "icon", inverse: shorten ? false : true }
+      : { type: "default", inverse: false };
 
   return (
     <>
-      <nav className={styles["navbar"]}>
+      <nav
+        className={`${styles["navbar"]} ${shorten ? styles["navbar--short"] : ""}`}
+      >
         <Logo {...logoProps} />
 
         <button onClick={handleHamburgerClicked}>
@@ -41,7 +46,16 @@ export function Navbar() {
         </button>
       </nav>
 
-      {delayedNavActive && <NavigationPage active={navActive} />}
+      {delayedNavActive && (
+        <NavigationPage
+          active={navActive}
+          onNavigate={handleHamburgerClicked}
+        />
+      )}
     </>
   );
 }
+
+Navbar.propTypes = {
+  shorten: PropTypes.bool,
+};

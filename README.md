@@ -1,4 +1,7 @@
-# Starting point of portfolio website
+# My Portfolio
 
-# References
-- [https://profy.dev/article/react-folder-structure#world-domination-colocation](Folder Structure for React Projects)
+## What I learned during the project?
+- **Intersection Observer API**
+- **Updates in React Portals**
+- **React Custom Hooks**
+- **Scroll Control with CSS**

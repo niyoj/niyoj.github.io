@@ -1,5 +1,5 @@
 .navbar {
-  position: absolute;
+  position: sticky;
   z-index: 20; /*wrt to navigation page*/
 
   top: 0;

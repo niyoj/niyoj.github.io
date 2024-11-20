@@ -11,6 +11,7 @@ export const HomePage = forwardRef((props, ref) => {
     <section
       className={`${styles["homepage"]} ${props.visible ? styles["homepage--visible"] : ""}`}
       ref={ref}
+      id="homepage"
     >
       <HomepageHero visible={props.visible} />
       <HomepageSide visible={props.visible} />

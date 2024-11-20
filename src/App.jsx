@@ -64,7 +64,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar shorten={!homepageVisible} />
 
       <HomePage visible={homepageVisible} ref={homepageRef} />
       <About visible={aboutVisible} tools={tools} ref={aboutRef} />

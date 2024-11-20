@@ -9,7 +9,7 @@ import styles from "./about.module.css";
 
 export const About = forwardRef((props, ref) => {
   return (
-    <section className={styles["about"]} ref={ref}>
+    <section className={styles["about"]} ref={ref} id="about">
       <SectionHeader
         title="About me"
         subtitle="Gears I work with"

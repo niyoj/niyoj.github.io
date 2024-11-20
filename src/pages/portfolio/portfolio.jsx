@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 import { SectionHeader } from "@features";
+import { getProjects } from "@data";
 
 import styles from "./portfolio.module.css";
 import { PortfolioCard } from "./protfolio-card/porfolio-card";
@@ -10,7 +11,7 @@ export const Portfolio = forwardRef((props, ref) => {
   const cardNum = 5;
 
   return (
-    <section className={styles["portfolio"]} ref={ref}>
+    <section className={styles["portfolio"]} ref={ref} id="portfolio">
       <div className={styles["portfolio__header"]}>
         <SectionHeader
           title="My projects"
@@ -28,11 +29,14 @@ export const Portfolio = forwardRef((props, ref) => {
           animationPlayState: props.visible ? "" : "paused",
         }}
       >
-        <PortfolioCard title="Focus Timer" name="pomodize" />
-        <PortfolioCard title="Focus Timer" name="pomodize" />
-        <PortfolioCard title="Focus Timer" name="pomodize" />
-        <PortfolioCard title="Focus Timer" name="pomodize" />
-        <PortfolioCard title="Focus Timer" name="pomodize" />
+        {getProjects().map((item, index) => (
+          <PortfolioCard
+            key={index}
+            title={item.title}
+            name={item.name}
+            link={item.link}
+          />
+        ))}
       </div>
     </section>
   );
