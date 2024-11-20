@@ -1,3 +1,5 @@
+import { getLink, getLatestActivities } from "@data";
+
 import { Activities } from "./activities/activities";
 import { MenuList } from "./menu-list/menu-list";
 
@@ -12,32 +14,8 @@ import { useLayoutEffect, useRef, useState } from "react";
 const dummyMenu1 = ["home", "about", "porfolio"];
 const dummyMenu2 = ["blogs", "contact"];
 
-const dummyActivities = [
-  {
-    title: "Education Information Management System",
-    description:
-      "A project I made for IOE, Thapathali Campus that manages the current student records at the campus.",
-  },
-  {
-    title: "Education Information Management System",
-    description:
-      "A project I made for IOE, Thapathali Campus that manages the current student records at the campus.",
-  },
-  {
-    title: "Education Information Management System",
-    description:
-      "A project I made for IOE, Thapathali Campus that manages the current student records at the campus.",
-  },
-];
-
-const links = {
-  linkedin: "https://linkedin.com/niyoj",
-  github: "https://github.com/niyoj",
-  twitter: "https://twitter.com/oliniyoj",
-};
-
 export function NavigationContent({ active = false, onNavigate }) {
-  const [activities, setActivities] = useState(dummyActivities);
+  const [activities, setActivities] = useState(getLatestActivities);
   const [menu1, setMenu1] = useState(dummyMenu1);
   const [menu2, setMenu2] = useState(dummyMenu2);
 
@@ -49,7 +27,7 @@ export function NavigationContent({ active = false, onNavigate }) {
 
       const spaceAvaiable = event.target.innerHeight - 250 - 250;
       const numbers = Math.floor(spaceAvaiable / oneActivitySpace);
-      setActivities(dummyActivities.slice(0, numbers));
+      setActivities(getLatestActivities().slice(0, numbers));
 
       // collapse menu on smaller screen on resize
       if (event.target.innerWidth < 500) {
@@ -102,13 +80,13 @@ export function NavigationContent({ active = false, onNavigate }) {
       <div className={styles["navpage__main__bottom"]}>
         <small> Designed and Developed by Niyoj</small>
         <div className={styles["navpage__icons"]}>
-          <a href={links.linkedin} target="_blank">
+          <a href={getLink("linkedin")} target="_blank">
             <Linkedin className={styles["social_icons"]} />
           </a>
-          <a href={links.twitter} target="_blank">
+          <a href={getLink("x")} target="_blank">
             <Twitter className={styles["social_icons"]} />
           </a>
-          <a href={links.github} target="_blank">
+          <a href={getLink("github")} target="_blank">
             <GitHub className={styles["social_icons"]} />
           </a>
         </div>

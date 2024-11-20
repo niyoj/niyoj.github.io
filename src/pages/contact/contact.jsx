@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 import { Logo } from "@ui";
+import { getLink } from "@data";
 
 import GitHub from "@assets/images/icons/github.svg?react";
 import LinkedIn from "@assets/images/icons/linkedin.svg?react";
@@ -25,13 +26,19 @@ export const Contact = forwardRef((props, ref) => {
       </header>
 
       <main className={styles["contact__list"]}>
-        <a href="mailto:niyoj.dev@gmail.com">
-          <p>niyoj.dev@gmail.com</p>
+        <a href={`mailto:${getLink("email")}`}>
+          <p>{getLink("email")}</p>
         </a>
         <div className={styles["social_links"]}>
-          <GitHub />
-          <LinkedIn />
-          <Twitter />
+          <a href={getLink("github")} target="_blank">
+            <GitHub />
+          </a>
+          <a href={getLink("linkedin")} target="_blank">
+            <LinkedIn />
+          </a>
+          <a href={getLink("x")} target="_blank">
+            <Twitter />
+          </a>
         </div>
       </main>
 

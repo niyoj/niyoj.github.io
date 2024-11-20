@@ -15,16 +15,14 @@ export const Activities = forwardRef(({ items, active = false }, ref) => {
         className={`${styles["menu__list"]} ${active ? styles["menu__list--active"] : styles["menu__list--inactive"]}`}
       >
         {items.map((item, index) => (
-          <div
-            key={index}
-            className={styles["menu__list__item"]}
-            data-index={index}
-          >
-            <p className={styles["menu__list__item__title"]}>{item.title}</p>
-            <small className={styles["menu__list__item__desc"]}>
-              {item.description}
-            </small>
-          </div>
+          <a href={item.link} target="_blank" key={index}>
+            <div className={styles["menu__list__item"]} data-index={index}>
+              <p className={styles["menu__list__item__title"]}>{item.title}</p>
+              <small className={styles["menu__list__item__desc"]}>
+                {item.description}
+              </small>
+            </div>
+          </a>
         ))}
 
         <small className={styles["menu__list__more"]}>
